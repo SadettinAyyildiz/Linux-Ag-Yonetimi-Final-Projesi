@@ -1,0 +1,306 @@
+= [center]#Linux Ağ Yönetimi Dersi Final Sınavı Projesi#
+Sadettin Ayyıldız - 170201123
+:doctype: article
+:encoding: utf-8
+:lang: en
+:toc: left
+:numbered:
+
+'''
+
+*VirtualBox 6.1.4 Oracle VM VirtualBox Extension Pack Yüklenmesi*
+
+Önce https://www.virtualbox.org/wiki/Downloads sayfasından Extension Pack'ı indirdim.
+
+Bunun için:
+
+. Virtual Box'ı açıp. File-Preferences'ı tıkladım.
+. Extension kısmındaki işaretli add new packed butonuna tıkladım ve     indirdiğim dosyanın yerini buldum.
+. Yerini bulduktan sonra dosyayı seçip aç butonuna tıkladım. Çıkan pencerede install deyip devam ettim.
+. Yüklemek lisans kabul etmeniz gerekmekte bunun için sözleşmenin en altına inip I Agree butonuna bastım. İlk açıldığında buton pasif gözüküyordu. Sözleşmenin en altına inince buton aktifleşti.
+. Daha sonra yüklemek için izin istedi. Evet'i tıkladım. Yükleme işlemini tamamladıktan sonra çıkan pencereden Ok deyip kapattım.
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/extension.png[]
+__ Extension Pack: usb, disk yönetimi vb. özelliklerin kullanımı için gerekli. __
+
+Bu şekilde VirtualBox Extension Pack Yüklenmesi tamamlanmış oldu.
+
+*VirtualBox'a Ubuntu Desktop 20 Yüklenmesi*
+
+Önce https://ubuntu.com/download/desktop sayfasından ubuntu20 iso dosyası indirdim.
+
+Daha sonra VirtualBox uygulamasını açarak aşağıdaki adımları izledim:
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/ubuntu1.png[caption="Şekil 1. ",title="Açılan pencereden yeni seçeneğini seçiyoruz",alt=""]
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/ubuntu2.png[caption="Şekil 2. ",title="Kırmızı çerçeveli bölümleri gerekli şekilde ayarlıyoruz. Burada istediğimiz ismi verebiliriz. Sonra devama basıyoruz.",alt=""]
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/ubuntu3.png[caption="Şekil 3. ",title="Sanal makine için ayıracağımız RAM miktarını seçiyoruz ve devam diyoruz.",alt=""]
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/ubuntu4.png[caption="Şekil 4. ",title="Kullanmak istediğimiz disk formatını seçiyoruz. Biz VDI formatını seçtik. Ardından devam dedik.",alt=""]
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/ubuntu5.png[caption="Şekil 5. ",title="Disk boyutunu değişken olarak ayarlıyoruz ve devam diyoruz.",alt=""]
+
+Disk boyutunu sabitlenmiş disk boyutu olarak ayarlarsak belirlediğimiz kadar alanı en baştan ubuntu için ayıracaktır. Bu seçenek ile daha performanslı kurulumlar yaparız ancak, disk problemimiz varsa diğer seçeneği seçmemiz gerekir. *Değişken disk boyutu* olarak ayarlarsak diskimizden sadece o anda ihtiyç duyulan kadar disk boyutu kullanılır, gerkli oldukça en fazla belirlediğimiz boyuta ulaşabilecek şekilde genişler. Ancak belli dosyaları yükledikçe genişleyen bu alan, dosyaları sildikçe küçülmez.
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/ubuntu6.png[caption="Şekil 6. ",title="Son olarak da ayırmak istediğimiz disk boyutunu seçiyoruz ve oluştur diyoruz.",alt=""]
+
+Daha sonra ubuntu20 kurulumunu yapmak için aşağıdaki adımlarla devam ediyoruz:
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/ubuntu7.png[caption="Şekil 7. ",title="Menüden ayarlara giriyoruz.",alt=""]
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/ubuntu8.png[caption="Şekil 8. ",title="Yeni açılan menüden depolamayı seçiyoruz.",alt=""]
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/ubuntu9.png[caption="Şekil 9. ",title="Buradan boş diski seçiyoruz.",alt=""]
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/ubuntu10.png[caption="Şekil 10. ",title="Sağ taraftaki okun gösterdiği disk ikonuna tıklıyoruz.",alt=""]
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/ubuntu11.png[caption="Şekil 11. ",title="Açılan pencereden disk dosyası seç'i seçiyoruz.",alt=""]
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/ubuntu12.png[caption="Şekil 12. ",title="Bu adımdan sonra indirdiğimiz Ubuntu20 iso dosyasını bulup seçiyoruz.",alt=""]
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/ubuntu13.png[caption="Şekil 13. ",title="Ardından tamam diyoruz.",alt=""]
+
+Bu adımları tamamladıktan sonra aşağıdaki adımları izliyoruz:
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/ubuntu14.png[caption="Şekil 14. ",title="Menüdeki başla seçeneğini seçiyoruz.",alt=""]
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/ubuntu15.png[caption="Şekil 15. ",title="Açılan pencereden tekrar başla diyoruz.",alt=""]
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/ubuntu16.png[caption="Şekil 16. ",title="Açılan pencereden dili seçiyoruz ve Ubuntu'yu dene diyoruz.",alt=""]
+
+Bu aşamada dene seçeneğini işaretlememizin nedeni Ubuntu'nun sorunsuz çalışıp çalışmadığını denetlemek ve internet bağlantımızı kontrol edebilmektir. Bu anlamda bir sorun yaşamadığımızı test ettikten sonra aşağıdaki adımlarla devam edebiliriz.
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/ubuntu17.png[caption="Şekil 17. ",title="Ekranda yer alan kurulum dosyasına çift tıklıyoruz.",alt=""]
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/ubuntu18.png[caption="Şekil 18. ",title="Açılan pencereden dil ayarlarını seçerek devam et diyoruz.",alt=""]
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/ubuntu19.png[caption="Şekil 19. ",title="Açılan pencereden klavye dilini seçerek devam et diyoruz.",alt=""]
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/ubuntu20.png[caption="Şekil 20. ",title="Açılan pencereden resimdeki işareli yerleri seçerek devam et diyoruz.",alt=""]
+
+Bu aşamada yapılan seçimler önemli. İnternet bağalantısı ve benzeri özelliklerin kullanılabilmesi için gösterilen yerler seçilerek devam edilmeli. 
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/ubuntu21.png[caption="Şekil 21. ",title="Burada mutlaka okla gösterilen başka birşey seçeneği seçilmeli.",alt=""]
+
+Diğer seçenekler seçilirse ana işletim sistemi silinebilir ya da bozulabilir.
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/ubuntu22.png[caption="Şekil 22. ",title="Buradan yedekleme bölüm tablosuna tıklıyoruz.",alt=""]
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/ubuntu23.png[caption="Şekil 23. ",title="Açılan pencerede devam et diyoruz.",alt=""]
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/ubuntu24.png[caption="Şekil 24. ",title="Boşalan seçili iken + tuşuna basıyoruz.",alt=""]
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/ubuntu25.jpg[caption="Şekil 25. ",title="Burada resimde gösterildiği şekilde bütün seçimler yapılmalı.",alt=""]
+
+En üstteki kutucukta seçili olan boyut ilk önerilenden birkaç GB daha az olacak şekilde ayarlanmalı.
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/ubuntu26.png[caption="Şekil 26. ",title="Daha sonra tekrar ekrandaki gibi boş alan seçilmeli ve + ikonuna basılmalı.",alt=""]
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/ubuntu27.png[caption="Şekil 27. ",title="Açılan pencereden nasıl kullanılacağı kısmı seçilerek.",alt=""]
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/ubuntu28.png[caption="Şekil 28. ",title="Boş alan seçeneği seçilmelidir.",alt=""]
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/ubuntu29.png[caption="Şekil 29. ",title="Daha sonra şimdi yükle seçeneği ile devam edilir.",alt=""]
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/ubuntu30.png[caption="Şekil 30. ",title="Açılan pencereden devam et diyoruz.",alt=""]
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/ubuntu31.png[caption="Şekil 31. ",title="Bölge seçip tekrar devam et diyoruz.",alt=""]
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/ubuntu32.png[caption="Şekil 32. ",title="Gerekli bilgileri girerek tekrar devam et diyoruz.",alt=""]
+
+Bu aşamadan sonra kurulum kendiliğinden tamamlanacak ve kurulum tamamlandı, tekrar başlat diyecektir. Tekrar başlat'ı seçerek Ubuntu 20' yi kullanmaya başlayabiliriz.
+
+
+*VirtualBox'a Ubuntu Server 20 Yüklenmesi*
+
+Önce https://ubuntu.com/download/server sayfasından ubuntu server 20 iso dosyası indirdim.
+
+Daha sonra VirtualBox uygulamasını açarak aşağıdaki adımları izledim:
+
+Önce VirtualBox uygulamasını açıyoruz. Ardından:
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/server1.png[caption="Şekil 1. ",title="Okla gösterilen yeni seçeneğini seçiyoruz.",alt=""]
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/server2.png[caption="Şekil 2. ",title="Açılan pencerden server ismini belirliyoruz ve gerekli ayarları şekildeki gibi yaparak devam diyoruz.",alt=""]
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/server3.png[caption="Şekil 3. ",title="Ayıracağımız REM miktarını seçerek devam diyoruz.",alt=""]
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/server4.png[caption="Şekil 4. ",title="Gerekli bilgileri girerek tekrar devam et diyoruz.",alt=""]
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/server4.png[caption="Şekil 4. ",title="Açılan pencereden şimdi sanal disk oluştur seçeneğini işaretleyip oluştur diyoruz.",alt=""]
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/server5.png[caption="Şekil 5. ",title="VDI seçeneğini sererek devam diyoruz.",alt=""]
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/server6.png[caption="Şekil 6. ",title="Açılan pencerede değişken olarak ayrılan seçeneğini işaretleyip devam diyoruz.",alt=""]
+
+Disk boyutunu sabitlenmiş disk boyutu olarak ayarlarsak belirlediğimiz kadar alanı en baştan ubuntu için ayıracaktır. Bu seçenek ile daha performanslı kurulumlar yaparız ancak, disk problemimiz varsa diğer seçeneği seçmemiz gerekir. *Değişken disk boyutu* olarak ayarlarsak diskimizden sadece o anda ihtiyç duyulan kadar disk boyutu kullanılır, gerkli oldukça en fazla belirlediğimiz boyuta ulaşabilecek şekilde genişler. Ancak belli dosyaları yükledikçe genişleyen bu alan, dosyaları sildikçe küçülmez.
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/server7.png[caption="Şekil 7. ",title="Ayarmak istediğimiz sanal HDD/SDD boyutunu belirliyoruz. 10 GB fazlasıyla yeter.",alt=""]
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/server8.png[caption="Şekil 8. ",title="Daha sonra server için oluşturduğumuz disk seçili iken okla gösterilen yerden başlata tıklıyoruz.",alt=""]
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/server9.png[caption="Şekil 9. ",title="Açılan pencereden dosya işaretli simgeyi seçiyoruz.",alt=""]
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/server10.png[caption="Şekil 10. ",title="Ekle seçeneğine tıklıyoruz.",alt=""]
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/server11.png[caption="Şekil 11. ",title="Daha sonra iso dosyasını kaydettiğimiz yere gidip iso dosyasını seçiyoruz. Open/Aç diyoruz.",alt=""]
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/server12.png[caption="Şekil 12. ",title="İso dosyamız seçili iken başlat diyoruz.",alt=""]
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/server13.png[caption="Şekil 13. ",title="Gelen ekrandan dili seçiyoruz ve ENTER'a basıyoruz.",alt=""]
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/server14.png[caption="Şekil 14. ",title="ENTER deyip devam ediyoruz.",alt=""]
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/server15.png[caption="Şekil 15. ",title="ENTER deyip devam ediyoruz.",alt=""]
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/server16.png[caption="Şekil 16. ",title="ENTER deyip devam ediyoruz.",alt=""]
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/server17.png[caption="Şekil 17. ",title="ENTER deyip devam ediyoruz.",alt=""]
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/server18.png[caption="Şekil 18. ",title="ENTER deyip devam ediyoruz.",alt=""]
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/server19.png[caption="Şekil 19. ",title="ENTER deyip devam ediyoruz.",alt=""]
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/server20.png[caption="Şekil 20. ",title="Continue deyip devam ediyoruz.",alt=""]
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/server21.png[caption="Şekil 21. ",title="Gerekli alanları (isim, server ismi, kullanıcı vb.) doldurarak ENTER diyoruz.",alt=""]
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/server22.png[caption="Şekil 22. ",title="Üstteki kırmızı kare içine alınan alanı işaretliyoruz. İşaretlemek için üzerine gelip ENTER a basıyoruz. Daha sonra aşağı ok tuşları ile en alt kısma inip Done üzerine gelince ENTER'a basıyoruz.",alt=""]
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/server23.png[caption="Şekil 23. ",title="Reboot deyip devam ediyoruz.",alt=""]
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/server24.png[caption="Şekil 24. ",title="Karşımıza gelen bu ekranda ENTER'a basıp devam ediyoruz.",alt=""]
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/server25.png[caption="Şekil 25. ",title="Bu ekranda bir kez ENTER'a basıyoruz.",alt=""]
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/server26.png[caption="Şekil 26. ",title="Continue deyip devam ediyoruz.",alt=""]
+
+[source,adoc]
+--
+servername login: (user ismi olarak belirlediğiniz isim) /
+--
+Ardından ENTER'e basıyoruz ve bizden password istiyor. Bu aşamada belirlediğimiz passwordu giriyoruz. Passwordu yazarken herhangi bir işaret çıkmıyor. Sanki yazmıyormuş gibi. Aslında yazıyor.
+
+[source,adoc]
+--
+servername login: username
+password:
+--
+
+Password girildikten sonra ENTER diyoruz.
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/server27.png[caption="Şekil 27. ",title="Server kurulumu tamamlandı.",alt=""]
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/server28.png[caption="Şekil 28. ",title="Server'ı kapatıp çıkmak için sudo poweroff komutunu kullanıyoruz.",alt=""]
+
+Serverdan çıkmak için:
+
+[source,adoc]
+--
+sudo poweroff
+--
+
+*VirtualBox ile Linux CorePlus (dcore) Yüklenmesi*
+
+Önce http://tinycorelinux.net/downloads.html adresine gidip CorePlus iso dosyasını bilgisayarımıza indiriyoruz. Bu sayfada Core, TinyCore ve CorePlus olarak üç ayrı seçenek var ve bu seçeneklerin bazı farklılıkları var. Sayfayı ziyaret ettiğinizde her biri için açıklamaları göreceksiniz. Açıklamalardan aralarındaki farklılıklar öğrenilebilir. Biz CorePlus indircez. Coreplus indirdikten sonra kurulum için
+aşağıdaki adımları takip ediyoruz.
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/dcore1.png[caption="Şekil 1. ",title="VirtualBox uygulaması açıkken okla gösterilen bölümdeki yeni seçeneğini seçiyoruz.",alt=""]
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/dcore2.png[caption="Şekil 2. ",title="Daha sonra karşımıza gelen menüden istediğimiz ismi girip, gerekli ayarları görseldeki gibi ayarlayarak devam diyoruz.",alt=""]
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/dcore3.png[caption="Şekil 3. ",title="Açılan pencerede ayırmak istediğimiz REM miktarını ayarlıyoruz. Bu aşamada hangi Linux dağıtımını kuruyorsa o dağıtıma ait minimum gereksinimlere dikkat edilmesi gerekir. . Bizim kurmakta olduğumuz CorePlus için minimum 256 mb Rem ihtiyacı var. Rem miktarını ayarladıktan sonra Devam diyoruz.",alt=""]
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/dcore4.png[caption="Şekil 4. ",title="Açılan pencereden Şimdi sanal bir disk oluştur seçeneğini seçerek oluştur diyoruz.",alt=""]
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/dcore5.png[caption="Şekil 5. ",title="Açılan pencereden VDI seçeneğini seçerek Devam diyoruz.",alt=""]
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/dcore6.png[caption="Şekil 6. ",title="Karşımıza çıkan pencereden değişken boyutlu ayarla seçeneğini seçiyoruz. CorePlus için çok büyük bir disk alanı ihtiyacı olmadığından daha performanslı çalışması için sabitlenmiş boyut da seçilebilir. Seçim yapıldıktan sonra Devam diyoruz.",alt=""]
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/dcore7.png[caption="Şekil 7. ",title="CorePlus için ayrılacak disk boyutunu ayarlıyoruz. Bu bölümde de REM ayarlarında olduğu gibi minimum gereksinimlere dikkat edilmesi gerekir. CorePlus mevcut sürümü için 2 GB yeterli. Oluştur diyerek devam ediyoruz.",alt=""]
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/dcore8.png[caption="Şekil 8. ",title="VirtualBox arayüzüne CorePlus için oluşturduğumuz disk seçili iken okla gösterilen bölümden başlat diyoruz.",alt=""]
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/dcore9.png[caption="Şekil 9. ",title="Açılan pencereden klasör ikonuna tıklıyoruz.",alt=""]
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/dcore10.png[caption="Şekil 10. ",title="Açılan pencereden okla gösterilen bölümdeki Ekle seçeneğini seçiyoruz.",alt=""]
+
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/dcore11.png[caption="Şekil 11. ",title="Bilgisayarımızda CorePlus iso dosyasını kaydettiğimiz yere giderek iso dosyasını seçiyoruz ve Open/Aç diyoruz.",alt=""]
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/dcore12.png[caption="Şekil 12. ",title="Açılan pencerede, ekranda göründüğü gibi CorePlus iso dosyası seçili iken (Ben daha önce başka iso dosyaları da yüklediğim için başka seçenekler de görünüyor. İlk defa bir iso dosyası yükleyenlerde sadece CorePlus iso dosyası görünecek) Seçin diyoruz.",alt=""]
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/dcore13.png[caption="Şekil 13. ",title="Açılan pencereden Başlat diyoruz.",alt=""]
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/dcore14.png[caption="Şekil 14. ",title="Açılan pencereden isteğe göre en üstteki default seçeneği seçilebilir. Ben Ice seçerek devam ettim. Devam etmek için seçimi yaptıktan sonra ENTER'a basıyoruz.",alt=""]
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/dcore15.png[caption="Şekil 15. ",title="Bu aşamada CorePlus arayüzü açılıyor. Açılan arayüzde sağ tıklayarak, Applications ve sonrasında tc-install seçeneğine tıklıyoruz.",alt=""]
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/dcore16.png[caption="Şekil 16. ",title="Açılan pencrede Whole Disk seçeneğini seçiyoruz, sonrasında sda seçili iken ileri devam ediyoruz.",alt=""]
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/dcore17.png[caption="Şekil 17. ",title="Dosya formatını ext4 seçerek ileri devam ediyoruz.",alt=""]
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/dcore18.png[caption="Şekil 18. ",title="Açılan pencerede çözünürlük ayarları, klavye ayarları ve kullanıcı adını (istediğiniz kullanıcı adı) resimde göründüğü gibi giriyoruz ve ileri diyoruz.",alt=""]
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/dcore18.1.png[caption="Şekil 18.1. ",title="Açılan pencerede resimdeki işaretli yerleri seçiyoruz ve devam diyoruz.",alt=""]
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/dcore19.png[caption="Şekil 19. ",title="Açılan pencerede proceed diyoruz.",alt=""]
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/dcore20.png[caption="Şekil 20. ",title="kurulum tamamlandıktan sonra sağ üstteki çarpıdan pencereyi kapatıyoruz.",alt=""]
+
+Bu aşamadan sonra CorePlus'ı tekrar başlatmamız gerekecek. Ancak tekrar başlatmadan önce üst menüden  *Aygıtlar -> Optik Sürücüler -> Diski sanal sürücüden kaldır* dememiz gerekiyor.
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/dcore21.png[caption="Şekil 21. ",title="diski sanal sürücüden çıkart dediğimizde resimdeki gibi bir uyarı gelecek. Zorla sök diyoruz ve CorePlus'ı tekrar başlatıyoruz. Kurulum tamamlandı.",alt=""]
+
+CorePlus Kullanıcı şifresini değiştirmek için terminal ekranını açıyoruz ve aşağıdaki komutu yazıyoruz:
+
+[source,adoc]
+--
+sudo passwd KULLANICIADI
+--
+
+Daha sonra ENTER'a basarak yeni şifremizi giriyoruz. Sonrasında bir kez daha şifremizi girerek tekrar ENTER'a basıyoruz ve şifremiz değişiyor.
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/dcore22.png[caption="Şekil 22. ",title="Şifre belirlemek için resimde görülen komutu girip ENTER'a basıyoruz. Daha sonra yeni şifreyi girerek yine ENTER ve aynı yeni şifreyi tekrar girerek ENTER'a basıyoruz ve şifremiz değişiyor.",alt=""]
+
+CorePlus REM'de çalıştığı için çıkmadan önce kaybolmamasını istediğimiz değişikliklerin mutlaka kaydedilmesi gerekiyor. Aksi taktirde dosyalarımız ve yaptığımız değişiklikler kaybolacaktır. Bunun için:
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/dcore23.png[caption="Şekil 23. ",title="CorePlus kapatılır ya da tekrar başlatılırken yapılan değişikliklerin kaybolmaması için Backup seçeneği seçilmeli.",alt=""]
+
+*VirtualBox Üzerindeki Sanal Makinenin Klonlanması*
+
+VirtualBox üzerinde yer alan sanal makinemizi aşağıdaki adımları izleyerek çoğaltabiliriz. Benim VirtualBox'ımın üzerinde üç adet sanal makine var. Hepsi için izlenecek adımlar aynı olduğundan sadece bir tanesinin çoğaltılmasını gösteriyorum. 
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/klon1.png[caption="Şekil 1. ",title="Çoğaltmak istediğimiz makinenin üzerine sağ tıklıyoruz ve Çoğalt/Clone seçeneğini seçiyoruz.",alt=""]
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/klon2.png[caption="Şekil 2. ",title="Gelen ekranda yeni makinemizin ismini yazıyoruz. Resimdeki seçenekleri işaretleyerek devam diyoruz.",alt=""]
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/klon3.png[caption="Şekil 3. ",title="Gelen ekranda birbirine bağantılı çoğaltma seçeneğini seçiyoruz ve çoğalt diyoruz. Bu seçeneği seçmeyip tam çoğaltma dersek yeni oluşturacak makine için bütün kaynakları tekrardan oluşturacak. İlk makine ile aynı miktarda REM SSD/HDD alanı oluşturacaktır. Bu da bilgisayarımızdan fazla kaynak tüketilmesine sebep olacaktır.",alt=""]
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/klon4.png[caption="Şekil 4. ",title="Resimde görüldüğü üzere çoğaltma işlemi başarılı bir şekilde gerçekleşmiştir.",alt=""]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+**Hello World**
+
+[source,adoc]
+--
+aciklama yaz --> komut satiri kodlarıi
+--
+
+
+image::/Users/sadettinayyildiz/Desktop/linux-bonus-puan.png[]
+  
+
