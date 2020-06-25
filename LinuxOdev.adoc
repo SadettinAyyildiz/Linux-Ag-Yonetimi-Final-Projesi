@@ -194,6 +194,13 @@ image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/server27.png[caption="
 
 image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/server28.png[caption="Şekil 28. ",title="Server'ı kapatıp çıkmak için sudo poweroff komutunu kullanıyoruz.",alt=""]
 
+Servername ismini değiştirmek için aşağıdaki komutu kullanıyoruz:
+
+[source,adoc]
+--
+sudo hostnamectl set-hostname YENİİSİM
+--
+
 Serverdan çıkmak için:
 
 [source,adoc]
@@ -280,7 +287,170 @@ image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/klon3.png[caption="Şe
 
 image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/klon4.png[caption="Şekil 4. ",title="Resimde görüldüğü üzere çoğaltma işlemi başarılı bir şekilde gerçekleşmiştir.",alt=""]
 
+== Senaryo 1
 
+*Ubuntu Desktop için Ağ bağdaştırıcı ayarlarını NAT olarak ayarlanması:* 
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/s11.png[caption="Şekil 1. ",title="VirtualBox arayüzü üzerindeki ayarlar seçeneğini seçiyoruz.",alt=""]
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/s12.png[caption="Şekil 2. ",title="Açılan pencerede okla gösterilen ağ seçeneğini seçiyoruz.",alt=""]
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/s13.png[caption="Şekil 3. ",title="Ok işaretleri ile gösterilen yerleri resimdeki gibi ayarlıyoruz.",alt=""]
+
+Aşağıdaki komut ile baktığımızda ssh2ın kullanılabilir olmadığını görüyoruz.
+
+[source,adoc]
+--
+service --status-all
+--
+
+Aşağıdaki komut ile ssh aktif hale getirilmeli:
+
+[source,adoc]
+--
+sudo apt install ssh
+--
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/s14.png[caption="Şekil 4. ",title="SSH ayarları.",alt=""]
+
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/s15.png[caption="Şekil 5. ",title="Port ayarlarının yapılması.",alt=""]
+
+Aşağıdaki komut ile ssh bağlantısı sağlıyoruz.
+
+[source,adoc]
+--
+ssh localhost -p 22 -l ayyildiz
+--
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/s16.png[caption="Şekil 6. ",title="SSH bağlantısı sağlandı.",alt=""]
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/s17.png[caption="Şekil 7. ",title="Host bilgisayardan uPC12 e ping atılamamaktadır.",alt=""]
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/s18.png[caption="Şekil 8. ",title="DC1 bilgisayarı köprü bağdaştırıcı olarak ayarlandı.",alt=""]
+
+CorePlus için ip adresi komutu:
+
+[source,adoc]
+--
+ifconfig
+--
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/s19.png[caption="Şekil 9. ",title="DC1 bilgisayarı ip adresi bulundu.",alt=""]
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/s20.png[caption="Şekil 10. ",title="userver1 yalnızca anamakine bağdaştırıcısı olarak ayarlandı.",alt=""]
+
+Ubuntu Server ip adresi bulmak için yazılan komut:
+
+[source,adoc]
+--
+ip addr show
+--
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/s21.png[caption="Şekil 11. ",title="userver1'in ip adresi bulundu.",alt=""]
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/s22.png[caption="Şekil 12. ",title="HOST bilgisayardan userver1'e ping atabiliyoruz.",alt=""]
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/s23.png[caption="Şekil 13. ",title="HOST bilgisayardan userver1'e SSH bağlantısı.",alt=""]
+
+== Senaryo 2
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/ss1.png[caption="Şekil 1. ",title="userver1, userver2, userver3 dahili ağ olarak ayarlandı.",alt=""]
+
+
+Ubuntu 20.04 LTS sunucusunda ağ yapılandırması netplan yardımcı programı tarafından denetlenir ve yönetilir. Ancak yükleme sırasında, bulut init, dhcp sunucusu varsa, sunucudaki arabirime dinamik bir ip yapılandırır. Bu nedenle, statik bir ip yapılandırmak için, önce ağ arayüzünün bulut init tarafından yönetilmediğinden emin olmamız ve onaylamamız gerekir.
+
+
+Bunun için “/Etc/cloud/cloud.cfg.d/subiquity-disable-cloudinit-networking.cfg” bulut init dosyasını açmamız ve “network: {config: devre dışı}” girişinin orada olduğundan emin olmamız gerekir. Bu girişin eksik olması durumunda manuel olarak eklenmesi gerekir. Bu dosyayı açmak için komut satırına aşağıdaki komutu yazmalıyız:
+
+[source,adoc]
+--
+cat /etc/cloud/cloud.cfg.d/subiquity-disable-cloudinit-networking.cfg
+--
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/ss2.png[caption="Şekil 2. ",title="/Etc/cloud/cloud.cfg.d/subiquity-disable-cloudinit-networking.cfg” bulut init dosyasının açılması.",alt=""]
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/ss3.png[caption="Şekil 3. ",title="network: {config: devre dışı}” girişi mevcut.",alt=""]
+
+Statik ip ataması için aşağıdaki komutu yazarak değiştirmek istediğimiz dosyanın konumuna gidiyoruz:
+
+[source,adoc]
+--
+cd /etc/netplan
+--
+
+Daha sonra bu nosyada nano ile değişiklik yapmak için aşağıdaki komutu yazıyoruz:
+
+[source,adoc]
+--
+sudo nano 00-installer-config.yaml
+--
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/ss4.png[caption="Şekil 4. ",title="Değişiklik yapılmak istenen dosya ile ilgili komutlar.",alt=""]
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/ss5.png[caption="Şekil 5. ",title="userver1 için static ip ataması dosya ayarları.",alt=""]
+
+userver1, userver2 ve userver3 için aynı adımlar izlenerek static ip ataması yapıldı.
+
+IP adresini görüntülemek için konsoldan aşağıdaki komutu yazıyoruz:
+
+[source,adoc]
+--
+ip addr show
+--
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/ss6.png[caption="Şekil 6. ",title="userver1'e ait ip adresi.",alt=""]
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/ss7.png[caption="Şekil 7. ",title="userver2'ye ait ip adresi.",alt=""]
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/ss8.png[caption="Şekil 8. ",title="userver3'e ait ip adresi.",alt=""]
+
+userver2'den userver1'e ssh bağlantısı için aşağıdaki komutu kullandım:
+
+[source,adoc]
+--
+ssh ayyildiz@192.168.3.2 
+--
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/ss9.png[caption="Şekil 9. ",title="userver2'den userver1'e ssh bağlantısı",alt=""]
+
+userver1'den userver3'e ssh bağlantısı için aşağıdaki komutu kullandım:
+
+[source,adoc]
+--
+ssh 192.168.3.4 -p 22 -l ayyildiz
+--
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/ss10.png[caption="Şekil 10. ",title="userver1'den userver3'e ssh bağlantısı",alt=""]
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/ss11.png[caption="Şekil 11. ",title="HOST bilgisayardan userver1'e ssh bağlantısı yapılamamaktadır.",alt=""]
+
+userver3'den userver1'e ping atmak için aşağıdaki komutu kullandım:
+
+[source,adoc]
+--
+ping 192.168.3.2
+--
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/ss12.png[caption="Şekil 12. ",title="userver3'den userver1'e ping atma başarılı.",alt=""]
+
+Aşağıdaki komutları kullanarak 170201123.txt ayyildiz.txt sadettin.txt dosyalarını oluşturdum.
+
+[source,adoc]
+--
+touch 170201123.txt
+touch sadettin.txt
+touch ayyildiz.txt
+--
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/ss13.png[caption="Şekil 13. ",title="txt dosyalarının oluşturulması",alt=""]
+
+
+
+
+
+
+== Senaryo 3
 
 
 
@@ -301,6 +471,5 @@ aciklama yaz --> komut satiri kodlarıi
 --
 
 
-image::/Users/sadettinayyildiz/Desktop/linux-bonus-puan.png[]
   
 
