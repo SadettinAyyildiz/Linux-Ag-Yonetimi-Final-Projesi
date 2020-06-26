@@ -445,6 +445,25 @@ touch ayyildiz.txt
 
 image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/ss13.png[caption="Şekil 13. ",title="txt dosyalarının oluşturulması",alt=""]
 
+Aşağıdaki komut ile userver1'den userver2'ye sftp bağlantısı yaptım.
+
+[source,adoc]
+--
+sftp ayyildiz@192.168.3.3
+--
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/ss14.png[caption="Şekil 14. ",title="userver1'den userver2'ye sftp bağlantısı.",alt=""]
+
+userver1'de userver2'ye sadettin.txt, ayyildiz.txt ve 170201123.txt dosyalarını taşımak için aşağıdaki komutları kullandım.
+
+[source,adoc]
+--
+put /home/ayyildiz/sadettin.txt /home/ayyildiz
+put /home/ayyildiz/ayyildiz.txt /home/ayyildiz
+put /home/ayyildiz/170201123.txt /home/ayyildiz
+--
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/ss15.png[caption="Şekil 15. ",title="userver1'den userver2'ye dosyaların taşınması.",alt=""]
 
 
 
