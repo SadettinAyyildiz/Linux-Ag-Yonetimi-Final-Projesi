@@ -553,6 +553,25 @@ sudo apt install -y net-tools traceroute
 
 image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/sss17.png[caption="Şekil 17. ",title="uPC1'e traceroute yüklenmesi.",alt=""]
 
+YÜleme tamalandıktan sonra aşağıdaki kod kullanılarak paket gönderimi yapılacaktır.
+
+[source,adoc]
+--
+sudo traceroute -I 192.168.3.2
+--
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/sss18.png[caption="Şekil 18. ",title="uPC1'den userver1'e paket gönderimi başarılı.",alt=""]
+
+Bu şekilde paket gönderimi sadece aynı ağ üzerinde olan bilgisayarlar arasında yapılabilir. Farklı ağlardaki bilgisayarlar arasında paket gönderimi yapabilmek için Router kurulması gerekir. Bu senaryoyu aşağıdaki birkaç örnek ile görebiliriz.
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/sss19.png[caption="Şekil 19. ",title="uPC1'in dahili1 ağından userver1'in dahili2 ağına paket gönderimi başarısız.",alt=""]
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/sss20.png[caption="Şekil 20. ",title="uPC1'in dahili1 ağından uPC2'nin dahili2 ağına paket gönderimi başarısız.",alt=""]
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/sss21.png[caption="Şekil 21. ",title="uPC1'in dahili 1 ağından userver2'in dahili3 ağına paket gönderimi başarılı.",alt=""]
+
+
+
 
 
 
