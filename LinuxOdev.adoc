@@ -15,7 +15,7 @@ Sadettin Ayyıldız - 170201123
 Bunun için:
 
 . Virtual Box'ı açıp. File-Preferences'ı tıkladım.
-. Extension kısmındaki işaretli add new packed butonuna tıkladım ve     indirdiğim dosyanın yerini buldum.
+. Extension kısmındaki işaretli add new packed butonuna tıkladım ve indirdiğim dosyanın yerini buldum.
 . Yerini bulduktan sonra dosyayı seçip aç butonuna tıkladım. Çıkan pencerede install deyip devam ettim.
 . Yüklemek lisans kabul etmeniz gerekmekte bunun için sözleşmenin en altına inip I Agree butonuna bastım. İlk açıldığında buton pasif gözüküyordu. Sözleşmenin en altına inince buton aktifleşti.
 . Daha sonra yüklemek için izin istedi. Evet'i tıkladım. Yükleme işlemini tamamladıktan sonra çıkan pencereden Ok deyip kapattım.
@@ -488,30 +488,74 @@ image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/sss9.png[caption="Şek
 
 image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/sss10.png[caption="Şekil 10. ",title="userver2'in üçüncü bir ağ bağdaştırıcısı ayarının Dahili Ağ olarak ayarlanması, isminin dahili1 olarak belirlenmesi.",alt=""]
 
+*userver1'in ip adresi ayarları için:*
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-**Hello World**
+Aşağıdaki komut ile değişiklik yapmak istediğimiz dosyaya gidiyoruz:
 
 [source,adoc]
 --
-aciklama yaz --> komut satiri kodlarıi
+cd /etc/netplan
 --
+
+Aşağıdaki komut ile dosyaya giriyoruz ve ip adreslerini resimdeki gibi ayarlıyoruz.
+
+[source,adoc]
+--
+sudo nano 00-installer-config.yaml
+--
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/sss11.png[caption="Şekil 11. ",title="userver1 için ip adresi ayarları.",alt=""]
+
+Aşağıdaki komut ile yapılan değişikleri kaydediyoruz:
+
+[source,adoc]
+--
+sudo netplan apply
+--
+
+Aşağıdaki komutu ile userver1 için ayarladığımız ip ayarlarını kontrol ediyoruz:
+
+[source,adoc]
+--
+hostname -I
+--
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/sss12.png[caption="Şekil 12. ",title="userver1 için ip adresi ayarlarını kontrol ediyoruz.",alt=""]
+
+Aynı şeilde userver2 için de ip ayarlarını aşağıdaki resimde gösterilen şekilde ayarlıyoruz.
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/sss13.png[caption="Şekil 13. ",title="userver2 için ip adresi ayarlarını.",alt=""]
+
+Aşağıdaki komutu ile userver2 için ayarladığımız ip ayarlarını kontrol ediyoruz:
+
+[source,adoc]
+--
+hostname -I
+--
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/sss14.png[caption="Şekil 14. ",title="userver2 için ip adresi ayarlarını kontrol ediyoruz.",alt=""]
+
+
+uPC1 için elle ip ataması aşağıdaki gibi yapıldı:
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/sss15.png[caption="Şekil 15. ",title="uPC1 için elle ip ataması.",alt=""]
+
+uPC1 için elle ip ataması aşağıdaki gibi yapıldı:
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/sss16.png[caption="Şekil 16. ",title="uPC2 için elle ip ataması.",alt=""]
+
+Daha sonra aşağıdaki komut ile uPC1'1 traceroute yüklüyoruz:
+
+[source,adoc]
+--
+sudo apt install -y net-tools traceroute
+--
+
+image::/Users/sadettinayyildiz/Desktop/linux-kurulum-foto/sss17.png[caption="Şekil 17. ",title="uPC1'e traceroute yüklenmesi.",alt=""]
+
+
+
+
 
 
   
